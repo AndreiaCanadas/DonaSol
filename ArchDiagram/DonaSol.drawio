@@ -1,0 +1,686 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="26.0.14" pages="9">
+  <diagram name="Protocol Reqs" id="MLOrpUTsYCb-GqjO-nfL">
+    <mxGraphModel dx="1877" dy="562" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="in_OgBRITB0Uf5k2DF2C-2" value="&lt;ul style=&quot;line-height: 150%;&quot;&gt;&lt;li&gt;&lt;font&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;&lt;font style=&quot;&quot;&gt;REQ00&lt;/font&gt;&lt;font style=&quot;&quot;&gt; &lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- &lt;/font&gt;&lt;/b&gt;The protocol shall allow an institution to create an account&amp;nbsp;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;REQ01&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/font&gt;&lt;/b&gt;The protocol shall allow an institution to create different profiles (including target value and campaign duration)&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;&lt;font style=&quot;&quot;&gt;REQ02&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;The protocol shall allow a user to contribute to a specific project profile&lt;/li&gt;&lt;li&gt;&lt;font&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;&lt;font style=&quot;&quot;&gt;REQ03&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/font&gt;&lt;/b&gt;The protocol shall, upon user donation, create a user account (one user account per pair: user and profile donated)&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;REQ03&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/font&gt;&lt;/b&gt;The protocol shall, upon donator user account creation, mint a Metaplex Core NFT to the user to represent the profile&lt;/li&gt;&lt;li&gt;&lt;font&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;&lt;font style=&quot;&quot;&gt;REQ04&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/font&gt;&lt;/b&gt;The protocol shall, upon user contribution, update the user core NFT with relevant information (Contributions, Points, ...)&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;&lt;font style=&quot;&quot;&gt;REQ05&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;The protocol shall store the donated funds in a vault&amp;nbsp;&lt;/li&gt;&lt;li&gt;&lt;font&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;&lt;font style=&quot;&quot;&gt;REQ06&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;The protocol shall send the funds to the institution, when target is reached&lt;/li&gt;&lt;li&gt;&lt;font&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;&lt;font style=&quot;&quot;&gt;REQ07&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;The protocol shall allow a user to refund their donations (when target not reached within fundraising window or when within reflection period)&lt;/li&gt;&lt;li&gt;&lt;font&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;&lt;font style=&quot;&quot;&gt;REQ08&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;The protocol shall allow a user to mint SPL Tokens according to his points&amp;nbsp;(&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 0, 0));&quot;&gt;TBD&lt;/font&gt;)&lt;/li&gt;&lt;li&gt;&lt;font&gt;&lt;b&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 0));&quot;&gt;&lt;font style=&quot;&quot;&gt;REQ09&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;The protocol shall allow a user to change points for specific rewards (&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 0, 0));&quot;&gt;TBD&lt;/font&gt;)&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-798" y="110" width="770" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="PP3FKBQ4GsOQahrbOHNQ-1" value="Overview" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-463" y="377" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PP3FKBQ4GsOQahrbOHNQ-2" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;DonaSol Protocol Requirements&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-463" y="50" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PP3FKBQ4GsOQahrbOHNQ-3" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1 - Institution creates DonaSol account&lt;/span&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;On-chain account gets created&lt;br&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;2 - Institution creates Profile account (Can have many, derived from profile account address and a random seed)&lt;/li&gt;&lt;ul&gt;&lt;li&gt;On-chain account gets created with critical information about the profile raising funds&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;3 - Donor donates to a specific profile / project&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Funds will be sent from the Donor wallet to a dedicated vault&lt;/li&gt;&lt;li&gt;User account gets updated with contribution for the specific project profile&lt;/li&gt;&lt;li&gt;Donor profile NFT gets updated&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;4 - User Account is created&amp;nbsp;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;On-chain account gets created with information about donor donations per Profile donation (relation 1..n)&lt;br&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-798" y="810" width="380" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="vIdOW-ByWZoWfI0eO3qd-1" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;5 - Core NFT&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Protocol will mint a Metaplex Core NFT, that will be used as the donor main profile (keeping track of entire contributions, points, rewards, etc)&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;6 - Transfer Funds&lt;/span&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Funds can be claimed by the Institution if the target is reached within the duration of the raising campaign&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;7 - Donor Refund&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Funds can be reclaimed by the donor if&lt;br&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Within a reflection period of 72 hours&lt;/li&gt;&lt;li&gt;The profile deadline has been reached and the target has not been reached&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-398" y="810" width="370" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-3" value="Intituition" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="-580" y="522" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-4" value="Donor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="-254" y="522" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j3rghigp7WfifDwusJbC-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="NECGvH-EqnRdm30bvRpW-14" target="NECGvH-EqnRdm30bvRpW-31">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-395" y="447" />
+              <mxPoint x="-63" y="447" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-14" value="Profile" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-470" y="472" width="150" height="261" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-15" value="+ owner: Pubkey" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-14" vertex="1">
+          <mxGeometry y="26" width="150" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-18" value="+ target: u64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-14" vertex="1">
+          <mxGeometry y="52" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="j3rghigp7WfifDwusJbC-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fillColor=#6d8764;strokeColor=#3A5431;" edge="1" parent="NECGvH-EqnRdm30bvRpW-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="212.20001220703125" y="76" as="targetPoint" />
+            <mxPoint x="150" y="76" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-17" value="+ start_date: i64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-14" vertex="1">
+          <mxGeometry y="84" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-24" value="+ duration: u16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-14" vertex="1">
+          <mxGeometry y="114" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7MvASZjFVno74_amZVXo-1" value="+ bump: u8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-14" vertex="1">
+          <mxGeometry y="144" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fALHBF7cn-AfZUXKkOcl-13" value="+ verification_status: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-14" vertex="1">
+          <mxGeometry y="174" width="150" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-16" value="+ name: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-14" vertex="1">
+          <mxGeometry y="203" width="150" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="fALHBF7cn-AfZUXKkOcl-12" value="+ category: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-14" vertex="1">
+          <mxGeometry y="231" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-25" value="Institution" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-788" y="497" width="150" height="169" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-26" value="+ owner: Pubkey" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-25" vertex="1">
+          <mxGeometry y="26" width="150" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-29" value="+ verification_status: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-25" vertex="1">
+          <mxGeometry y="52" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fALHBF7cn-AfZUXKkOcl-7" value="+ registration_date: i64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-25" vertex="1">
+          <mxGeometry y="82" width="150" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-27" value="+ name: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-25" vertex="1">
+          <mxGeometry y="111" width="150" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-28" value="+ website: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-25" vertex="1">
+          <mxGeometry y="137" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-31" value="User" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-168" y="483" width="140" height="168" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-32" value="+ owner: Pubkey" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-31" vertex="1">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="j3rghigp7WfifDwusJbC-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fillColor=#b1ddf0;strokeColor=#10739e;" edge="1" parent="NECGvH-EqnRdm30bvRpW-31" source="NECGvH-EqnRdm30bvRpW-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-53.79998779296875" y="65" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-33" value="+ profile: Pubkey" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-31" vertex="1">
+          <mxGeometry y="52" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-35" value="+ amount_donated: u64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-31" vertex="1">
+          <mxGeometry y="78" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KtEDJ1euhh5KLdWrZ0lR-1" value="+ last_donation: i64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-31" vertex="1">
+          <mxGeometry y="108" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-36" value="+ bump: u8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="NECGvH-EqnRdm30bvRpW-31" vertex="1">
+          <mxGeometry y="138" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#bac8d3;strokeColor=#23445d;" parent="1" source="NECGvH-EqnRdm30bvRpW-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-470" y="552" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-40" value="2 - Creates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="NECGvH-EqnRdm30bvRpW-37" vertex="1" connectable="0">
+          <mxGeometry x="-0.1194" y="-1" relative="1" as="geometry">
+            <mxPoint y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=1.019;entryY=0.102;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="NECGvH-EqnRdm30bvRpW-3" target="NECGvH-EqnRdm30bvRpW-29" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-613" y="555" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-39" value="1 - Creates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="NECGvH-EqnRdm30bvRpW-38" vertex="1" connectable="0">
+          <mxGeometry x="-0.1254" y="1" relative="1" as="geometry">
+            <mxPoint x="-5" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#e51400;strokeColor=#B20000;entryX=0.698;entryY=1.111;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="NECGvH-EqnRdm30bvRpW-4" target="fALHBF7cn-AfZUXKkOcl-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-406" y="772" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-238" y="766" />
+              <mxPoint x="-365" y="766" />
+            </Array>
+            <mxPoint x="-238" y="608" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-45" value="3 - Donates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="NECGvH-EqnRdm30bvRpW-44" vertex="1" connectable="0">
+          <mxGeometry x="-0.1804" relative="1" as="geometry">
+            <mxPoint x="-40" y="29" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.473;entryY=0.773;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" target="NECGvH-EqnRdm30bvRpW-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-420" y="772" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-420" y="733" />
+              <mxPoint x="-420" y="772" />
+              <mxPoint x="-566" y="772" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NECGvH-EqnRdm30bvRpW-52" value="6 - Transfer Funds" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="NECGvH-EqnRdm30bvRpW-51" vertex="1" connectable="0">
+          <mxGeometry x="-0.3017" y="-1" relative="1" as="geometry">
+            <mxPoint x="-19" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j3rghigp7WfifDwusJbC-3" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;4 - Creates&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-280.00001220703126" y="422.99998779296874" width="82" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="j3rghigp7WfifDwusJbC-7" value="7 - Refund" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-324" y="522" width="74" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="j3rghigp7WfifDwusJbC-9" value="5 - Core&lt;div&gt;NFT&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-224" y="509" width="61" height="41" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="PenSZEMQ_-Pj2E2VnuJC" name="Create Institution Account">
+    <mxGraphModel dx="1282" dy="565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dBe38MUnxP24uN3W4Fjz-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="JWMeTgfnsc48k09J2Aem-1" target="JWMeTgfnsc48k09J2Aem-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JWMeTgfnsc48k09J2Aem-1" value="Institution&amp;nbsp;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+          <mxGeometry x="399" y="150" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="W83kBaLF2gamQ5cwqTbN-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JWMeTgfnsc48k09J2Aem-5" target="JWMeTgfnsc48k09J2Aem-17" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JWMeTgfnsc48k09J2Aem-5" value="Creates Institution Account" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="364" y="300" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="JWMeTgfnsc48k09J2Aem-17" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="399" y="480" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4w6aVtaKtpQnIvF8Kqyj-1" value="Create Institution Account" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+          <mxGeometry x="364" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="aMiHGyBbCNL96DDZJbyY-1" value="&lt;div style=&quot;&quot;&gt;The Institution will be able to create an on-chain account to store relevant information.&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;Such information consists of:&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Owner&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Name&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Website URL&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Verification Status *&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Registration Date&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;* Status to be updated by protocol admin&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="520" y="265" width="290" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="cJtoegDM8R9OltQ93ShX-3" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="cJtoegDM8R9OltQ93ShX-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="375" as="sourcePoint" />
+            <mxPoint x="364" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cJtoegDM8R9OltQ93ShX-4" value="Institution creation consists of on-chain account creation.&lt;div&gt;Essential state will be stored&lt;/div&gt;" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="80" y="305" width="150" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Create Profile Account" id="F_qRHKePZuMtSOzeUD4G">
+    <mxGraphModel dx="604" dy="656" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="01VosQbBLRgIfOvJqB0r-0" />
+        <mxCell id="01VosQbBLRgIfOvJqB0r-1" parent="01VosQbBLRgIfOvJqB0r-0" />
+        <mxCell id="01VosQbBLRgIfOvJqB0r-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="01VosQbBLRgIfOvJqB0r-1" source="01VosQbBLRgIfOvJqB0r-3" target="01VosQbBLRgIfOvJqB0r-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="01VosQbBLRgIfOvJqB0r-3" value="Institution&amp;nbsp;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="01VosQbBLRgIfOvJqB0r-1">
+          <mxGeometry x="399" y="150" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01VosQbBLRgIfOvJqB0r-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="01VosQbBLRgIfOvJqB0r-1" source="01VosQbBLRgIfOvJqB0r-5" target="01VosQbBLRgIfOvJqB0r-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01VosQbBLRgIfOvJqB0r-5" value="Creates profile Account" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="01VosQbBLRgIfOvJqB0r-1">
+          <mxGeometry x="364" y="300" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="01VosQbBLRgIfOvJqB0r-6" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" vertex="1" parent="01VosQbBLRgIfOvJqB0r-1">
+          <mxGeometry x="398" y="630" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="01VosQbBLRgIfOvJqB0r-7" value="Create Profile Account" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="01VosQbBLRgIfOvJqB0r-1">
+          <mxGeometry x="364" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="01VosQbBLRgIfOvJqB0r-8" value="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;The Institution will be able to create an on-chain account to each different project that they are raising for to store relevant information.&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Such information consists of:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;- Description of project&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;- Amount to raise&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;- Duration of the raising campaign&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;- Category of the project&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;- Verification Status *&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;* Status to be updated by protocol admin&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="01VosQbBLRgIfOvJqB0r-1">
+          <mxGeometry x="530" y="410" width="250" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="01VosQbBLRgIfOvJqB0r-9" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="01VosQbBLRgIfOvJqB0r-1" source="01VosQbBLRgIfOvJqB0r-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="375" as="sourcePoint" />
+            <mxPoint x="364" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01VosQbBLRgIfOvJqB0r-10" value="Profile creation consists of on-chain account creation.&lt;div&gt;Essential state will be stored&lt;/div&gt;" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=1;whiteSpace=wrap;" vertex="1" parent="01VosQbBLRgIfOvJqB0r-1">
+          <mxGeometry x="80" y="317.5" width="150" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="fsZQQvg8JT6Pd_Yl4wqa-0" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="01VosQbBLRgIfOvJqB0r-1" source="01VosQbBLRgIfOvJqB0r-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="480" y="350" as="sourcePoint" />
+            <mxPoint x="413" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="561" y="350" />
+              <mxPoint x="561" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fsZQQvg8JT6Pd_Yl4wqa-1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="fsZQQvg8JT6Pd_Yl4wqa-0">
+          <mxGeometry x="0.5095" y="-1" relative="1" as="geometry">
+            <mxPoint x="-61" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fsZQQvg8JT6Pd_Yl4wqa-2" value="1..n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="fsZQQvg8JT6Pd_Yl4wqa-0">
+          <mxGeometry x="-0.1499" y="2" relative="1" as="geometry">
+            <mxPoint x="-80" y="90" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Create User Account" id="o4RHIsyv_-4k9HPUzYxB">
+    <mxGraphModel dx="1115" dy="491" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-0" />
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-1" parent="7L3O7Gea5uOL-Nn4e25w-0" />
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="7L3O7Gea5uOL-Nn4e25w-1" source="7L3O7Gea5uOL-Nn4e25w-3" target="7L3O7Gea5uOL-Nn4e25w-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-3" value="Donor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="7L3O7Gea5uOL-Nn4e25w-1">
+          <mxGeometry x="399" y="130" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="7L3O7Gea5uOL-Nn4e25w-1" source="7L3O7Gea5uOL-Nn4e25w-5" target="7L3O7Gea5uOL-Nn4e25w-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-5" value="Creates User Account" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="7L3O7Gea5uOL-Nn4e25w-1">
+          <mxGeometry x="364" y="300" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-6" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" vertex="1" parent="7L3O7Gea5uOL-Nn4e25w-1">
+          <mxGeometry x="399" y="480" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-7" value="Create User Account" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="7L3O7Gea5uOL-Nn4e25w-1">
+          <mxGeometry x="364" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-8" value="&lt;div style=&quot;&quot;&gt;The Donor will be able to create an on-chain account to each different project that they are donating to, in order to store relevant information.&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;Such information consists of:&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Amount donated&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Owner address&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Campaign donated to&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Last donation timestamp&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="7L3O7Gea5uOL-Nn4e25w-1">
+          <mxGeometry x="520" y="265" width="290" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-9" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="7L3O7Gea5uOL-Nn4e25w-1" source="7L3O7Gea5uOL-Nn4e25w-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="375" as="sourcePoint" />
+            <mxPoint x="364" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7L3O7Gea5uOL-Nn4e25w-10" value="User creation consists of on-chain account creation.&lt;div&gt;Essential state will be stored&lt;/div&gt;" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=1;whiteSpace=wrap;" vertex="1" parent="7L3O7Gea5uOL-Nn4e25w-1">
+          <mxGeometry x="80" y="305" width="150" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Donate to Profile" id="6aUxYVU4HsVSa7vmziCc">
+    <mxGraphModel dx="1068" dy="471" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-0" />
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-1" parent="nxl7L1ppyWMlJfxhmWDY-0" />
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="nxl7L1ppyWMlJfxhmWDY-1" source="nxl7L1ppyWMlJfxhmWDY-4" target="qCDRzTJBmKMihVykoQsp-0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-4" value="Donor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="nxl7L1ppyWMlJfxhmWDY-1">
+          <mxGeometry x="399" y="140" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="nxl7L1ppyWMlJfxhmWDY-1" source="nxl7L1ppyWMlJfxhmWDY-10" target="nxl7L1ppyWMlJfxhmWDY-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-10" value="Funds are sent to the dedicated vault" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="nxl7L1ppyWMlJfxhmWDY-1">
+          <mxGeometry x="364" y="425" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="nxl7L1ppyWMlJfxhmWDY-1" source="nxl7L1ppyWMlJfxhmWDY-12" target="nxl7L1ppyWMlJfxhmWDY-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-12" value="User account is updated" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="nxl7L1ppyWMlJfxhmWDY-1">
+          <mxGeometry x="364" y="575" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="nxl7L1ppyWMlJfxhmWDY-1" source="nxl7L1ppyWMlJfxhmWDY-14" target="nxl7L1ppyWMlJfxhmWDY-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-14" value="Donor NFT is updated" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="nxl7L1ppyWMlJfxhmWDY-1">
+          <mxGeometry x="364" y="715" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-15" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" vertex="1" parent="nxl7L1ppyWMlJfxhmWDY-1">
+          <mxGeometry x="399" y="845" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-16" value="Donate" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="nxl7L1ppyWMlJfxhmWDY-1">
+          <mxGeometry x="364" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nxl7L1ppyWMlJfxhmWDY-17" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;User account and vault are created (if they do not exist yet, i.e. - if is a first donation from the donor to the selected profile).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;Funds are transferred from the donor wallet to a dedicated vault. *&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;User account is updated with contribution to the selected project profile, and timestamp is saved.&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;Donor Core NFT is updated with points from new contribution. (TBD: after reflection period has elapsed&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;* vault is derived from user and profile&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="nxl7L1ppyWMlJfxhmWDY-1">
+          <mxGeometry x="550" y="250" width="210" height="275" as="geometry" />
+        </mxCell>
+        <mxCell id="qCDRzTJBmKMihVykoQsp-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="nxl7L1ppyWMlJfxhmWDY-1" source="qCDRzTJBmKMihVykoQsp-0" target="qCDRzTJBmKMihVykoQsp-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCDRzTJBmKMihVykoQsp-8" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="qCDRzTJBmKMihVykoQsp-3">
+          <mxGeometry x="-0.0857" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qCDRzTJBmKMihVykoQsp-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="nxl7L1ppyWMlJfxhmWDY-1" source="qCDRzTJBmKMihVykoQsp-0" target="nxl7L1ppyWMlJfxhmWDY-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCDRzTJBmKMihVykoQsp-6" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="qCDRzTJBmKMihVykoQsp-4">
+          <mxGeometry x="-0.112" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qCDRzTJBmKMihVykoQsp-0" value="User account exists?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="nxl7L1ppyWMlJfxhmWDY-1">
+          <mxGeometry x="367" y="285" width="94" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="qCDRzTJBmKMihVykoQsp-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="nxl7L1ppyWMlJfxhmWDY-1" source="qCDRzTJBmKMihVykoQsp-2" target="nxl7L1ppyWMlJfxhmWDY-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCDRzTJBmKMihVykoQsp-2" value="User account and dedicated vault are created" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="nxl7L1ppyWMlJfxhmWDY-1">
+          <mxGeometry x="190" y="280" width="100" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="joj0jfg1qkLs3TCMXVH_" name="Mint Donor NFT">
+    <mxGraphModel dx="868" dy="471" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="a-Q-b8k7iBhHcxVn102T-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7tewa17rw0EMQEeq4SX8-1" target="a-Q-b8k7iBhHcxVn102T-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pWj4Jy7cXDDJ4Uu0mckJ-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7tewa17rw0EMQEeq4SX8-1" target="a-Q-b8k7iBhHcxVn102T-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T6SQDhKY4jRwg1LbwbmM-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tewa17rw0EMQEeq4SX8-1" target="a-Q-b8k7iBhHcxVn102T-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tewa17rw0EMQEeq4SX8-1" value="Protocol" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+          <mxGeometry x="399" y="140" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a-Q-b8k7iBhHcxVn102T-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="a-Q-b8k7iBhHcxVn102T-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-Q-b8k7iBhHcxVn102T-1" value="Mint NFT to User" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="364" y="270" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="eMD7qPDKxbEzxeicACC7-1" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="399" y="430" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SwpKhldD8Kt2uRfbgyO6-1" value="Mint Donor NFT" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+          <mxGeometry x="364" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Ac0B_TEq2v5hf4DXh-Rb-1" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;The protocol will mint a Metaplex Core NFT, that will be used as the donor main profile, keeping track of:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Total contributions&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Points&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Rewards&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Contributions are freezed for a 72-hour period&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="560" y="235" width="220" height="170" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Update Donor NFT" id="sk7RZU_bYUtZ1iCBEuno">
+    <mxGraphModel dx="1042" dy="565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="-neGpXIPzywo1Ur6XidS-0" />
+        <mxCell id="-neGpXIPzywo1Ur6XidS-1" parent="-neGpXIPzywo1Ur6XidS-0" />
+        <mxCell id="-neGpXIPzywo1Ur6XidS-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="-neGpXIPzywo1Ur6XidS-1" source="-neGpXIPzywo1Ur6XidS-5" target="-neGpXIPzywo1Ur6XidS-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-neGpXIPzywo1Ur6XidS-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="-neGpXIPzywo1Ur6XidS-1" source="-neGpXIPzywo1Ur6XidS-5" target="-neGpXIPzywo1Ur6XidS-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-neGpXIPzywo1Ur6XidS-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="-neGpXIPzywo1Ur6XidS-1" source="-neGpXIPzywo1Ur6XidS-5" target="-neGpXIPzywo1Ur6XidS-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-neGpXIPzywo1Ur6XidS-5" value="Protocol" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="-neGpXIPzywo1Ur6XidS-1">
+          <mxGeometry x="399" y="140" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-neGpXIPzywo1Ur6XidS-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="-neGpXIPzywo1Ur6XidS-1" source="-neGpXIPzywo1Ur6XidS-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-neGpXIPzywo1Ur6XidS-7" value="Update NFT to User" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="-neGpXIPzywo1Ur6XidS-1">
+          <mxGeometry x="364" y="270" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="-neGpXIPzywo1Ur6XidS-8" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" vertex="1" parent="-neGpXIPzywo1Ur6XidS-1">
+          <mxGeometry x="399" y="430" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-neGpXIPzywo1Ur6XidS-9" value="Update Donor NFT" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="-neGpXIPzywo1Ur6XidS-1">
+          <mxGeometry x="364" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-neGpXIPzywo1Ur6XidS-10" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;The protocol will update the Core NFT, after the reflection period elapsed, to update data:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Total contributions&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Points&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Rewards&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;*&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;* TBD: access to exclusive events, discounts, personalized gifts&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(could be offered by the institutions or partnerships)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="-neGpXIPzywo1Ur6XidS-1">
+          <mxGeometry x="560" y="223.75" width="220" height="192.5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="fL61mzO8UJBM1ou37brn" name="Transfer Funds to Institution">
+    <mxGraphModel dx="1068" dy="471" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8fE5-rVqKXrHqX7BctG2-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="T1VIAcXRPwdie84o1FSb-1" target="8fE5-rVqKXrHqX7BctG2-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-QPbYkSro_5f4Xwq_FW-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="T1VIAcXRPwdie84o1FSb-1" target="8fE5-rVqKXrHqX7BctG2-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T1VIAcXRPwdie84o1FSb-1" value="Institution" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="399" y="130" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8fE5-rVqKXrHqX7BctG2-2" target="_kCNAVgWhMb5lNY1pJku-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8fE5-rVqKXrHqX7BctG2-2" value="Claim Funds" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="364" y="240" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="C9iTIyDu9ZADGQh8lcnb-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8fE5-rVqKXrHqX7BctG2-4" target="YA3BsVsSqNZG459oRfi1-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8fE5-rVqKXrHqX7BctG2-4" value="Funds are transferred from vault to Institution wallet" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="449.5" y="680" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8fE5-rVqKXrHqX7BctG2-11" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="185" y="1034" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Vh5eedStJT7ob7jYPvr-3" value="Transfer Funds to Institution" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+          <mxGeometry x="364" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Uj3lwPkKXjfPx8lCwMkn-1" value="&lt;div style=&quot;&quot;&gt;The Institution can request the collected funds, when campaign deadline has been reached.&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;I&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;f the target amount has been reached funds are transferred to Institution account.&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="580" y="335" width="210" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="C9iTIyDu9ZADGQh8lcnb-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="YA3BsVsSqNZG459oRfi1-1" target="8fE5-rVqKXrHqX7BctG2-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C9iTIyDu9ZADGQh8lcnb-11" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="C9iTIyDu9ZADGQh8lcnb-9">
+          <mxGeometry x="0.2165" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C9iTIyDu9ZADGQh8lcnb-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="YA3BsVsSqNZG459oRfi1-1" target="C9iTIyDu9ZADGQh8lcnb-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C9iTIyDu9ZADGQh8lcnb-12" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="C9iTIyDu9ZADGQh8lcnb-10">
+          <mxGeometry x="0.2696" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YA3BsVsSqNZG459oRfi1-1" value="Target reached?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="359" y="550" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="YA3BsVsSqNZG459oRfi1-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="YA3BsVsSqNZG459oRfi1-5" target="YA3BsVsSqNZG459oRfi1-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YA3BsVsSqNZG459oRfi1-5" value="Delete associated vaults" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="449.5" y="840" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YA3BsVsSqNZG459oRfi1-11" target="YA3BsVsSqNZG459oRfi1-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YA3BsVsSqNZG459oRfi1-11" value="Delete associated User accounts" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="449.5" y="999" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="YA3BsVsSqNZG459oRfi1-16" target="8fE5-rVqKXrHqX7BctG2-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YA3BsVsSqNZG459oRfi1-16" value="Delete profile Account" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="278.5" y="999" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="C9iTIyDu9ZADGQh8lcnb-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="C9iTIyDu9ZADGQh8lcnb-1" target="8fE5-rVqKXrHqX7BctG2-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C9iTIyDu9ZADGQh8lcnb-1" value="Throw error&lt;br&gt;&lt;br&gt;(TBD possible automatic refund)" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="278.5" y="680" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_kCNAVgWhMb5lNY1pJku-2" target="YA3BsVsSqNZG459oRfi1-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-5" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_kCNAVgWhMb5lNY1pJku-4">
+          <mxGeometry x="-0.05" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="_kCNAVgWhMb5lNY1pJku-2" target="_kCNAVgWhMb5lNY1pJku-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-10" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_kCNAVgWhMb5lNY1pJku-9">
+          <mxGeometry x="-0.0508" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-2" value="Deadline reached?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="359" y="380" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_kCNAVgWhMb5lNY1pJku-6" target="8fE5-rVqKXrHqX7BctG2-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_kCNAVgWhMb5lNY1pJku-6" value="Throw error" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="385" width="100" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="KXXOtqIhosT76quyXDxI" name="Donor Refund">
+    <mxGraphModel dx="1831" dy="807" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="urltDjGQeHla7XbQMe_K-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="urltDjGQeHla7XbQMe_K-3" target="urltDjGQeHla7XbQMe_K-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="urltDjGQeHla7XbQMe_K-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="urltDjGQeHla7XbQMe_K-3" target="urltDjGQeHla7XbQMe_K-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="urltDjGQeHla7XbQMe_K-3" value="Donor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="399" y="130" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="urltDjGQeHla7XbQMe_K-5" target="kFxScyQCAUvQrFs_Frq5-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="urltDjGQeHla7XbQMe_K-5" value="Donor requests a refund from a donated profile" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="364" y="250" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="L_LzzSu3x8_55ITDtUmZ-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="urltDjGQeHla7XbQMe_K-9" target="L_LzzSu3x8_55ITDtUmZ-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="urltDjGQeHla7XbQMe_K-9" value="Protocol sends donated funds back to Donor" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="364" y="660" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="urltDjGQeHla7XbQMe_K-10" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="399" y="1110" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Rg4_12dh3CGM8ovpq6Z1-1" value="Donor Refund" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+          <mxGeometry x="364" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ebCq7O8EHm6VaOEjxTh7-1" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Donor can request a refund if within a 72-hour period window of reflection (before project deadline reached) OR if project deadline has been reached without target amount.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;User core NFT will be updated to remove contribution restored and associated points.&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="570" y="220" width="210" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="l4Y5WtqEH6gYdcMAvd2a-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="L_LzzSu3x8_55ITDtUmZ-1" target="91AJb9Rz5sFSpX7XZqCP-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L_LzzSu3x8_55ITDtUmZ-1" value="User account is updated to remove contribution" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="364" y="810" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="H4ssDvKFD-txvFKJaNFZ-1" target="kFxScyQCAUvQrFs_Frq5-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-12" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="kFxScyQCAUvQrFs_Frq5-11">
+          <mxGeometry x="-0.0889" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4Y5WtqEH6gYdcMAvd2a-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="H4ssDvKFD-txvFKJaNFZ-1" target="urltDjGQeHla7XbQMe_K-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l4Y5WtqEH6gYdcMAvd2a-9" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="l4Y5WtqEH6gYdcMAvd2a-8">
+          <mxGeometry x="-0.2645" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="H4ssDvKFD-txvFKJaNFZ-1" value="72 hours elapsed?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="390" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l4Y5WtqEH6gYdcMAvd2a-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="91AJb9Rz5sFSpX7XZqCP-4" target="urltDjGQeHla7XbQMe_K-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="91AJb9Rz5sFSpX7XZqCP-4" value="Donor profile NFT is updated" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="364" y="960" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="l4Y5WtqEH6gYdcMAvd2a-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KW8oX7q8-6N63oZHQaFY-1" target="urltDjGQeHla7XbQMe_K-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KW8oX7q8-6N63oZHQaFY-1" value="Throw error" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="570" y="510" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kFxScyQCAUvQrFs_Frq5-1" target="kFxScyQCAUvQrFs_Frq5-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-5" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="kFxScyQCAUvQrFs_Frq5-4">
+          <mxGeometry x="-0.0333" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kFxScyQCAUvQrFs_Frq5-1" target="H4ssDvKFD-txvFKJaNFZ-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-7" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="kFxScyQCAUvQrFs_Frq5-6">
+          <mxGeometry x="-0.0208" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-1" value="profile deadline reached?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="374" y="390" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kFxScyQCAUvQrFs_Frq5-2" target="KW8oX7q8-6N63oZHQaFY-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-9" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="kFxScyQCAUvQrFs_Frq5-8">
+          <mxGeometry x="-0.046" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4Y5WtqEH6gYdcMAvd2a-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kFxScyQCAUvQrFs_Frq5-2" target="urltDjGQeHla7XbQMe_K-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l4Y5WtqEH6gYdcMAvd2a-7" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="l4Y5WtqEH6gYdcMAvd2a-2">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-2" value="profile target reached?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="374" y="520" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l4Y5WtqEH6gYdcMAvd2a-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kFxScyQCAUvQrFs_Frq5-10" target="urltDjGQeHla7XbQMe_K-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kFxScyQCAUvQrFs_Frq5-10" value="Throw error" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="70" y="380" width="100" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

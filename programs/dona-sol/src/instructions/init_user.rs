@@ -19,13 +19,14 @@ use crate::{
 };
 
 #[derive(Accounts)]
+#[instruction(_profile_name: String)]
 pub struct InitUser<'info> {
     #[account(mut)]
     pub user: Signer<'info>,
     #[account(
         init,
         payer = user,
-        seeds = [b"donor", user.key().as_ref(), profile.key().as_ref()],
+        seeds = [b"donor", user.key().as_ref(), _profile_name.as_bytes()],
         bump,
         space = User::INIT_SPACE,
     )]
@@ -42,7 +43,7 @@ pub struct InitUser<'info> {
 
 impl<'info> InitUser<'info> {
 
-    pub fn init_user_account(&mut self, bumps: InitUserBumps) -> Result<()> {
+    pub fn init_user_account(&mut self, _profile_name: String, bumps: InitUserBumps) -> Result<()> {
 
         self.user_account.set_inner(User {
             owner: self.user.key(),
@@ -54,8 +55,6 @@ impl<'info> InitUser<'info> {
         Ok(())
     }
 
-       // [AC] NFT attributes make sense?
-       // [AC] name for NFT to be received in this method makes sense? or should this be added to User account info and be received when donating to
     pub fn mint_profile_nft(&mut self, user_name: String) -> Result<()> {
         if self.mint.owner != &mpl_core::ID {
             CreateV1CpiBuilder::new(&self.mpl_core_program.to_account_info())
@@ -64,7 +63,7 @@ impl<'info> InitUser<'info> {
                 .authority(Some(&self.user.to_account_info()))
                 .payer(&self.user.to_account_info())
                 .owner(Some(&self.user.to_account_info()))
-                .update_authority(None)                             // TBD ?
+                .update_authority(None)
                 .system_program(&self.system_program.to_account_info())
                 .data_state(DataState::AccountState)
                 .name("DonaSol Profile".to_string())
@@ -94,7 +93,7 @@ impl<'info> InitUser<'info> {
                             },
                         ]
                     }), 
-                    authority: None                             // TBD ?
+                    authority: None
                 }])
                 .invoke()?;
         }

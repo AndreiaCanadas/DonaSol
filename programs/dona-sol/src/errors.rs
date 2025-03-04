@@ -19,4 +19,11 @@ pub enum DonaSolError {
 
     #[msg("Signer is not profile owner")]
     SignerIsNotOwner,
+
+    #[msg("Project campaign deadline ended")]
+    DeadlineEnded,
+
+    #[msg("Insufficient amount for rent exemption")]
+    InsufficientAmount,
+    
 }

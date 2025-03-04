@@ -15,6 +15,7 @@ use crate::{
 }};
 
 #[derive(Accounts)]
+#[instruction(profile_name: String)]
 pub struct Refund<'info> {
     #[account(mut)]
     pub donor: Signer<'info>,
@@ -22,12 +23,10 @@ pub struct Refund<'info> {
     #[account(
         mut,
         close = donor,
-        seeds = [b"donor", donor.key().as_ref(), profile.key().as_ref()],
+        seeds = [b"donor", donor.key().as_ref(), profile_name.as_bytes()],
         bump = user_account.bump,
     )]
     pub user_account: Account<'info, User>,
-
-    // TBD: vault definition
     #[account(
         seeds = [b"state", profile.key().as_ref()],
         bump = vault_state.state_bump,
@@ -48,10 +47,10 @@ pub struct Refund<'info> {
 impl<'info> Refund<'info> {
 
     // Is there any checks that need to be done or is it safe enough?
-    pub fn refund_donor(&mut self) -> Result<()> {
+    pub fn refund_donor(&mut self, _profile_name: String) -> Result<()> {
 
         // Check if project deadline has been reached
-        if self.profile.start_date + self.profile.duration as i64 >= Clock::get()?.unix_timestamp {
+        if Clock::get()?.unix_timestamp - self.profile.start_date >= self.profile.duration as i64 {
             // Profile target reached -> Throw error: Refund not available (project milestone completed)
             if self.profile.target >= self.profile.target {         // TBD: GET TOTAL AMOUNT COLLECTED
                 return err!(DonaSolError::RefundErrorMilestoneCompleted);
@@ -69,7 +68,7 @@ impl<'info> Refund<'info> {
         let seeds = &[
             b"vault",
             vault_state_key.as_ref(),
-            &[self.vault_state.state_bump]
+            &[self.vault_state.vault_bump]
         ];     
         let signer_seeds = &[&seeds[..]];
 
@@ -84,7 +83,7 @@ impl<'info> Refund<'info> {
 
         let amount = self.user_account.amount_donated;
 
-        transfer(cpi_context, amount)?;   // Is this correct and robust??
+        transfer(cpi_context, amount)?; 
 
         Ok(())
     }

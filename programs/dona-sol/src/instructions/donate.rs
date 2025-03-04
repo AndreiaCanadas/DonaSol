@@ -1,23 +1,23 @@
 use anchor_lang::{
-    prelude::*, 
-    system_program::{
+    prelude::*, solana_program::native_token::LAMPORTS_PER_SOL, system_program::{
         transfer, 
         Transfer
     }
 };
 
 use mpl_core::{
+    accounts::BaseAssetV1, 
+    fetch_plugin, 
     instructions::UpdatePluginV1CpiBuilder, 
     types::{
         Attribute, 
         Attributes, 
-        Plugin
+        Plugin,
     }
 };
 
 use crate::{
-    constants::UserMilestone, 
-    state::{
+        constants::{UserMilestone, VerificationStatus}, errors::DonaSolError, state::{
         Donations,
         Profile, 
         User, 
@@ -30,6 +30,11 @@ pub struct Donate<'info> {
     #[account(mut)]
     pub donor: Signer<'info>,
     #[account(mut)]
+    pub admin: SystemAccount<'info>,
+    #[account(
+        mut,
+        // constraint = profile.verification_status == VerificationStatus::Verified,
+    )]
     pub profile: Account<'info, Profile>,
     #[account(
         init_if_needed,
@@ -40,7 +45,6 @@ pub struct Donate<'info> {
     )]
     pub user_account: Account<'info, User>,
 
-    // TBD: vault definition
     #[account(
         seeds = [b"state", profile.key().as_ref()],
         bump = vault_state.state_bump,
@@ -52,8 +56,8 @@ pub struct Donate<'info> {
         bump = vault_state.vault_bump,
     )]
     pub vault: SystemAccount<'info>,
-
-    /// CHECK: This account should be updated with the new NFT values
+    /// CHECK: This account should be updated with the new NFT attributes values
+    #[account(mut)]
     pub core_nft_account: AccountInfo<'info>,
     /// CHECK: This is the ID of the Metaplex Core program
     #[account(address = mpl_core::ID)]
@@ -61,21 +65,50 @@ pub struct Donate<'info> {
     pub system_program: Program<'info, System>,
 }
 
-// TBD: Implement fee
-// TBD: Implement reflection period of 72h (hold updates to user account and core NFT with the contributions) ?? Or this is done only at refund?
-// TBD: Enable donating only within profile duration window!!
 impl<'info> Donate<'info> {
-    pub fn transfer_to_vault(&mut self, amount: u64) -> Result<()> {
+    pub fn donate(&mut self, amount: u64) -> Result<()> {
+        // If project campaign deadline has ended
+        if Clock::get()?.unix_timestamp >= self.profile.start_date + self.profile.duration as i64 {
+            return err!(DonaSolError::DeadlineEnded);
+        }
+
+        let fee = amount / 100;
+        let amount_to_transfer = amount - fee;
+
+        let minimum_lamports_exemption = Rent::get()?.minimum_balance(self.vault.to_account_info().data_len());
+
+        // Check if the amount is enough to cover the minimum balance
+        if amount_to_transfer < minimum_lamports_exemption {
+            return err!(DonaSolError::InsufficientAmount);
+        }
+        
         let cpi_program = self.system_program.to_account_info();
 
+        // Transfer amount to vault
         let cpi_accounts = Transfer {
             from: self.donor.to_account_info(),
             to: self.vault.to_account_info(),
         };
 
-        let cpi_ctx = CpiContext::new(cpi_program, cpi_accounts);
+        let cpi_ctx = CpiContext::new(cpi_program.clone(), cpi_accounts);
 
         transfer(cpi_ctx, amount)?;
+
+        // Transfer fees to admin
+        let cpi_accounts = Transfer {
+            from: self.donor.to_account_info(),
+            to: self.admin.to_account_info(),
+        };
+
+        let cpi_ctx = CpiContext::new(cpi_program, cpi_accounts);
+
+        transfer(cpi_ctx, fee)?;
+
+        self.update_donation_track(amount_to_transfer)?;
+
+        self.update_user_account(amount_to_transfer)?;
+
+        self.update_user_nft(amount_to_transfer)?;
 
         Ok(())
     }
@@ -99,45 +132,73 @@ impl<'info> Donate<'info> {
         Ok(())
     }
 
-    pub fn update_user_account(&mut self, amount: u64, bumps: DonateBumps) -> Result<()> {
+    pub fn update_user_account(&mut self, amount: u64) -> Result<()> {
 
-        self.user_account.set_inner( User { 
-            owner: self.donor.key(), 
-            profile: self.profile.key(), 
-            amount_donated: self.user_account.amount_donated + amount,
-            last_donation_date: Clock::get()?.unix_timestamp, 
-            bump: bumps.user_account,
-        });
+        self.user_account.amount_donated += amount;
+        self.user_account.last_donation_date = Clock::get()?.unix_timestamp;
 
         Ok(())
     }
 
-    // TBD: Point system and badges definition
-    pub fn update_profile_nft(&mut self, points: u64) -> Result<()> { // [AC] check for correctness and aplicability
+    pub fn update_user_nft(&mut self, amount: u64) -> Result<()> {
 
-       UpdatePluginV1CpiBuilder::new(&self.mpl_core_program.to_account_info())
-            .asset(&self.core_nft_account.to_account_info())
-            .payer(&self.donor.to_account_info())
-            .system_program(&self.system_program.to_account_info())
-            .plugin(Plugin::Attributes(Attributes { attribute_list: 
-                vec![
-                    Attribute {
-                        key: "Bagde".to_string(),
-                        value: UserMilestone::DonorNewbie.to_string(),  // TBD: Define update
-                    },
-                    Attribute { 
-                        key: "Total amount donated".to_string(), 
-                        value: self.user_account.amount_donated.to_string(), 
-                    },
-                    Attribute { 
-                        key: "Points".to_string(),
-                        value: points.to_string(), 
-                    },
-                ]
-            }))
-            .invoke()?;
-            
-        Ok(())
+        let (_, fetched_attributes, _) = fetch_plugin::<BaseAssetV1, Attributes>(
+            &self.core_nft_account.to_account_info(),
+            mpl_core::types::PluginType::Attributes,
+        )?;
+
+        let mut attribute_list: Vec<Attribute> = Vec::new();
+
+        let mut total_amount: u64 = 0;
+
+        for attribute in &fetched_attributes.attribute_list {
+            if attribute.key == "Total amount donated" {
+                total_amount = attribute.value.parse::<u64>().unwrap().checked_add(amount).unwrap();
+            }
+        }
+        let total_points = total_amount * 10;
+
+        let user_milestone = if total_amount >= 500 * LAMPORTS_PER_SOL {
+            UserMilestone::GenerosityGuru
+        } else if total_amount >= 350 * LAMPORTS_PER_SOL {
+            UserMilestone::KindnessKnight
+        } else if total_amount >= 200 * LAMPORTS_PER_SOL {
+            UserMilestone::CharityChampion
+        } else if total_amount >= 100 * LAMPORTS_PER_SOL {
+            UserMilestone::GenerosityGrasshopper
+        } else {
+            UserMilestone::DonorNewbie
+        };
+
+        for attribute in fetched_attributes.attribute_list {
+            if attribute.key == "Bagde" {
+                attribute_list.push(Attribute {
+                    key: "Bagde".to_string(),
+                    value: user_milestone.to_string(),
+                });
+            } else if attribute.key == "Total amount donated" {
+                attribute_list.push(Attribute {
+                    key: "Total amount donated".to_string(), 
+                    value: total_amount.to_string(),
+                });
+            } else if attribute.key == "Points" {
+                attribute_list.push(Attribute {
+                    key: "Points".to_string(),
+                    value: total_points.to_string(),
+                });
+            }else {
+                attribute_list.push(attribute);
+            }
+        }
+
+        UpdatePluginV1CpiBuilder::new(&self.mpl_core_program.to_account_info())
+        .asset(&self.core_nft_account.to_account_info())
+        .payer(&self.donor.to_account_info())
+        .system_program(&self.system_program.to_account_info())
+        .plugin(Plugin::Attributes(Attributes { attribute_list}))
+        .invoke()?;
+        
+    Ok(())
     }
 
 }

@@ -1,13 +1,12 @@
 use anchor_lang::prelude::*;
 
-declare_id!("8dDR8ExmWPvi4k3UYDT1Vr47c1Z5MVC1CrWfT3KH6KMt");
+declare_id!("GznbGRXZGfVAB6tzeFeYGvwMrQ2T49rgBjLk6A3STmzp");
 
 mod state;
 mod instructions;
 mod errors;
 mod constants;
 
-use state::*;
 use instructions::*;
 use constants::*;
 
@@ -34,8 +33,8 @@ pub mod dona_sol {
         Ok(())
     }
 
-    pub fn init_profile(ctx: Context<InitProfile>, target: u64, duration: u16, category: ProfileType, name: String, description: String) -> Result<()> {
-        ctx.accounts.init_profile(target, duration, category, name, description, ctx.bumps)?;
+    pub fn init_profile(ctx: Context<InitProfile>, name: String, target: u64, duration: u16, category: ProfileType, description: String) -> Result<()> {
+        ctx.accounts.init_profile(name, target, duration, category, description, ctx.bumps, false)?;
 
         Ok(())
     }
@@ -52,32 +51,34 @@ pub mod dona_sol {
         Ok(())
     }
 
-    pub fn init_user(ctx: Context<InitUser>, name: String) -> Result<()> {
-        ctx.accounts.init_user_account(ctx.bumps)?;
-        ctx.accounts.mint_profile_nft(name)?;
+    pub fn init_user(ctx: Context<InitUser>, profile_name: String, user_name: String) -> Result<()> {
+        ctx.accounts.init_user_account(profile_name, ctx.bumps)?;
+        ctx.accounts.mint_profile_nft(user_name)?;
 
         Ok(())
     }
 
     pub fn donate(ctx: Context<Donate>, amount: u64) -> Result<()> {
-        ctx.accounts.transfer_to_vault(amount)?;
-        ctx.accounts.update_user_account(amount, ctx.bumps)?;
-        ctx.accounts.update_profile_nft(amount*10)?;               // TBD: points roadmap
+        ctx.accounts.donate(amount)?;
 
         Ok(())
     }
 
-    pub fn refund(ctx: Context<Refund>) -> Result<()> {
-        ctx.accounts.refund_donor()?;
+    pub fn refund(ctx: Context<Refund>, profile_name: String) -> Result<()> {
+        ctx.accounts.refund_donor(profile_name)?;
 
         Ok(())
     }
 
-    pub fn transfer_to_institution(ctx: Context<WithdrawFunds>) -> Result<()> {
+    pub fn transfer_to_institution(ctx: Context<WithdrawFunds>, profile_name: String) -> Result<()> {
+        ctx.accounts.transfer_to_institution(profile_name)?;
 
-        ctx.accounts.transfer_to_institution();
-        
-        //ctx.remaining_accounts
+        Ok(())
+    }
+
+    // Method used for testing purposes. To be deleted in production
+    pub fn set_duration(ctx: Context<WithdrawFunds>, profile_name: String, new_duration: u16) -> Result<()> {
+        ctx.accounts.set_duration(profile_name, new_duration)?;
 
         Ok(())
     }
